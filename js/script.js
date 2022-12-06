@@ -23,6 +23,7 @@ for (let i = 0; i < dropDown.length; i++) {
             optionTag += '</option>';
 
             // <option value="GBP">GBP</option>
+        //
 
 
         //alert(optionTag);
@@ -36,7 +37,7 @@ getButton[0].addEventListener("click", e => {
 });
 
 function getExchangeRate(){
-    const amount = document.querySelector(". amount input");
+    const amount = document.querySelector(".amount input"); //gets the exchange rate
     let amountVal = amount.value;
     if(amountVal == "" || amountVal == "0" ){
         amount.value = "1";
@@ -45,5 +46,11 @@ function getExchangeRate(){
     }
     let url = 'https://v6.exchangerate-api.com/v6/3aa0b0ecf93cec23872e6d52/latest/';
         url += fromCurrency.value;
-    fetch(url).then(response => console.log(response.json()));
+    fetch(url).then(response => response.json()).then(result => {
+        let exchangeRate = result.conversion_rates[toCurrency.value]; //conversionrates doesnt want to work?
+       let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
+       console.log(totalExchangeRate)
+        //console.log(result)
+    })
 }
+
