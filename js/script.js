@@ -14,19 +14,28 @@ for (let i = 0; i < dropDown.length; i++) {
             selected = currency_code == "GBP" ? "selected" : "";
         }
 
+        //wrong option tg below
 
-        let optionTag = '<option value="';
-            optionTag += currency_code;
-            optionTag += selected;
-            optionTag += '">';
-            optionTag += currency_code;
-            optionTag += '</option>';
+       // let optionTag = '<option value="';
+           // optionTag += currency_code;
+           // optionTag += selected;
+           // optionTag += '">';
+          //  optionTag += currency_code;
+           // optionTag += '</option>';
 
             // <option value="GBP">GBP</option>
         //
+            // new
+
+        let optionTag = '<option value="';
+        optionTag += currency_code;
+        optionTag += '"'
+        optionTag += selected;
+        optionTag += '">';
+        optionTag += currency_code;
+        optionTag += '</option>';
 
 
-        //alert(optionTag);
 
         dropDown[i].insertAdjacentHTML("beforeend", optionTag);
     }
