@@ -1,11 +1,13 @@
 let country_code = {
-    "AED" : "AE",
-    "AFN" : "AF",
-    "XCD" : "AG",
-    "ALL" : "AL",
-    "AMD" : "AM",
-    "ANG" : "AN",
-    "AOA" : "AO",
+    // putting currencies in comments that i dont need
+    //also using lower caps for country code so that it works as png
+   /* "AED" : "ae",
+    "AFN" : "af",
+    "XCD" : "ag",
+    "ALL" : "al",
+    "AMD" : "am",
+    "ANG" : "an",
+    "AOA" : "ao",
     "AQD" : "AQ",
     "ARS" : "AR",
     "AUD" : "AU",
@@ -28,9 +30,9 @@ let country_code = {
     "BZD" : "BZ",
     "CAD" : "CA",
     "CDF" : "CD",
-    "XAF" : "CF",
-    "CHF" : "CH",
-    "CLP" : "CL",
+    "XAF" : "CF",*/
+    "CHF" : "ch",
+   /* "CLP" : "CL",
     "CNY" : "CN",
     "COP" : "CO",
     "CRC" : "CR",
@@ -45,12 +47,12 @@ let country_code = {
     "ECS" : "EC",
     "EEK" : "EE",
     "EGP" : "EG",
-    "ETB" : "ET",
-    "EUR" : "FR",
-    "FJD" : "FJ",
-    "FKP" : "FK",
-    "GBP" : "GB",
-    "GEL" : "GE",
+    "ETB" : "ET",*/
+    "EUR" : "eu",
+   // "FJD" : "FJ",
+   // "FKP" : "FK",
+    "GBP" : "gb",
+   /* "GEL" : "GE",
     "GGP" : "GG",
     "GHS" : "GH",
     "GIP" : "GI",
@@ -70,15 +72,15 @@ let country_code = {
     "IRR" : "IR",
     "ISK" : "IS",
     "JMD" : "JM",
-    "JOD" : "JO",
-    "JPY" : "JP",
-    "KES" : "KE",
+    "JOD" : "JO",*/
+    "JPY" : "jp",
+   /* "KES" : "KE",
     "KGS" : "KG",
     "KHR" : "KH",
     "KMF" : "KM",
-    "KPW" : "KP",
-    "KRW" : "KR",
-    "KWD" : "KW",
+    "KPW" : "KP",*/
+    "KRW" : "kr",
+   /* "KWD" : "KW",
     "KYD" : "KY",
     "KZT" : "KZ",
     "LAK" : "LA",
@@ -157,6 +159,6 @@ let country_code = {
     "YER" : "YE",
     "ZAR" : "ZA",
     "ZMK" : "ZM",
-    "ZWD" : "ZW"
+    "ZWD" : "ZW"*/
 
 }
