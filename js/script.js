@@ -11,7 +11,7 @@ for (let i = 0; i < dropDown.length; i++) {
         if(i == 0){
             selected = currency_code == "CHF" ? "selected" : "";
         } else if (i == 1) {
-            selected = currency_code == "GBP" ? "selected" : "";
+            selected = currency_code == "EUR" ? "selected" : "";
         }
 
         //wrong option tg below
@@ -65,6 +65,19 @@ getButton[0].addEventListener("click", e => {
     e.preventDefault(); //STop fr
     getExchangeRate();
 });
+
+//working on exchange icon
+const exchangeIcon = document.querySelector(".dropdown .icon");
+exchangeIcon.addEventListener("click", ()=>{ //eventlistener acts on the action from user, in this case when click happens to the selected item (the icon)
+    let tempCode = fromCurrency.value;
+    fromCurrency.value = toCurrency.value; // to and from
+    toCurrency.value = tempCode; //switiching: from and to
+    //making flags change upon switch
+    loadFlag(fromCurrency);
+    loadFlag(toCurrency);
+    getExchangeRate();
+});
+
 
 function getExchangeRate(){
     const amount = document.querySelector(".amount input"), //gets the exchange rate
