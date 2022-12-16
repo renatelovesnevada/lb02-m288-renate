@@ -10,7 +10,7 @@ for (let i = 0; i < dropDown.length; i++) {
         // Default
         if(i == 0){
             selected = currency_code == "CHF" ? "selected" : "";
-        } else if (i == 1) {
+        } else if (i === 1) {
             selected = currency_code == "GBP" ? "selected" : "";
         }
 
@@ -88,7 +88,7 @@ function getExchangeRate(){
         amount.value = 1;
         //Default is 1, if under 1 it will change to 1 automatically
     }
-    exchangeRateTxt.innerText = "Getting echange rate..."
+    exchangeRateTxt.innerText = "Getting exchange rate..."
     let url = 'https://v6.exchangerate-api.com/v6/3aa0b0ecf93cec23872e6d52/latest/';
         url += fromCurrency.value;
     fetch(url).then(response => response.json()).then(result => {
