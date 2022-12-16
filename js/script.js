@@ -11,7 +11,7 @@ for (let i = 0; i < dropDown.length; i++) {
         if(i == 0){
             selected = currency_code == "CHF" ? "selected" : "";
         } else if (i == 1) {
-            selected = currency_code == "EUR" ? "selected" : "";
+            selected = currency_code == "GBP" ? "selected" : "";
         }
 
         //wrong option tg below
@@ -31,7 +31,7 @@ for (let i = 0; i < dropDown.length; i++) {
         optionTag += currency_code;
         optionTag += '"'
         optionTag += selected;
-        optionTag += '">';
+        optionTag += '>';
         optionTag += currency_code;
         optionTag += '</option>';
 
