@@ -79,25 +79,37 @@ exchangeIcon.addEventListener("click", ()=>{ //eventlistener acts on the action 
 });
 
 
-function getExchangeRate(){
+function getExchangeRate() {
     const amount = document.querySelector(".amount input"), //gets the exchange rate
-    exchangeRateTxt = document.querySelector(".exchange-rate");
+        exchangeRateTxt = document.querySelector(".exchange-rate");
     let amountVal = amount.value;
-    if(amountVal == "" || amountVal == "0" ){
+    if (amountVal == "" || amountVal == "0") {
         amount.value = "1";
         amount.value = 1;
         //Default is 1, if under 1 it will change to 1 automatically
+
+        //result in json
+        var resultJson = {
+            "from": amount,
+            "to": exchangeRateTxt,
+            "result": totalExchangeRate
+        };
+        // Display the result
+        document.getElementById("result").innerHTML = resultJson.result;
+
     }
+    let totalExchangeRate;
     exchangeRateTxt.innerText = "Getting exchange rate..."
     let url = 'https://v6.exchangerate-api.com/v6/3aa0b0ecf93cec23872e6d52/latest/';
-        url += fromCurrency.value;
+    url += fromCurrency.value;
     fetch(url).then(response => response.json()).then(result => {
         let exchangeRate = result.conversion_rates[toCurrency.value]; //conversionrates to log out in console depending on input
-       let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
-       const exchangeRateTxt = document.querySelector(".exchange-rate");
-       // output onto screen as txt
-       exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
+        totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
+        const exchangeRateTxt = document.querySelector(".exchange-rate");
+        // output onto screen as txt
+        exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
 
     })
+
 }
 
